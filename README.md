@@ -22,7 +22,8 @@ This project demonstrates a distributed machine learning framework for training 
 
 2. Virtual Env
 ```python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate```
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
 3. Dependencies
 `pip install -r requirements.txt`
@@ -31,13 +32,29 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate```
 ### Running the System
 
 1. Start server
-python server.py
+`python server.py`
+
+2. Start one or more worker nodes
+```python worker.py --address 0.0.0.0:50052 --server localhost:50051 --log worker1.log
+python worker.py --address 0.0.0.0:50053 --server localhost:50051 --log worker2.log
+```
+
+3. Inititate training va Flask API
+`curl -X POST http://localhost:8000/run_train`
+
+### Logs
+The server and workers log training progress, including forward and backward passes, to their respective log files or the console.
+
+### Notes
+This system supports multiple epochs and dynamic data shuffling.
+The system can be extended to work across multiple devices or networks with minor configuration changes.
 
 
 
 ### Flow Diagram
 Assuming we have 1-n workers/layers.
 
+```
 [Server]
     |
     | ForwardPass (inputs [64, 784])
@@ -72,3 +89,4 @@ Assuming we have 1-n workers/layers.
 [Server]
     |
     | Epoch Completed
+```
