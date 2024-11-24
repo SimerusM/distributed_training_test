@@ -13,9 +13,8 @@ from distributed_training_pb2_grpc import TrainingServiceStub
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# Then your existing imports
 from common.utils import serialize_tensor, deserialize_tensor, setup_logger, get_device
+
 import distributed_training_pb2_grpc
 import logging
 
