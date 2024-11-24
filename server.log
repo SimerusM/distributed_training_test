@@ -1,0 +1,43 @@
+[2024-11-23 21:06:54,223] INFO:server_logger: Central Server stopped.
+[2024-11-23 21:06:59,548] INFO:server_logger: Model initialized with two layers.
+[2024-11-23 21:06:59,548] INFO:server_logger: TrainingServiceServicer initialized.
+[2024-11-23 21:06:59,550] INFO:server_logger: Central Server started on port 50051.
+[2024-11-23 21:06:59,550] INFO:server_logger: Flask app started on port 8000.
+[2024-11-23 21:07:02,442] INFO:server_logger: Registered Worker 1: localhost:50052 at localhost:50052, assigned to layer 0
+[2024-11-23 21:07:05,038] INFO:server_logger: Registered Worker 2: localhost:50053 at localhost:50053, assigned to layer 1
+[2024-11-23 21:07:10,199] INFO:server_logger: Training started.
+[2024-11-23 21:07:10,201] INFO:server_logger: Epoch 1 started.
+[2024-11-23 21:07:10,203] INFO:server_logger: Sending ForwardPass to Worker 1
+[2024-11-23 21:07:10,217] INFO:server_logger: Received ForwardPass response from Worker 1, new input shape torch.Size([64, 256])
+[2024-11-23 21:07:10,217] INFO:server_logger: Sending ForwardPass to Worker 2
+[2024-11-23 21:07:10,221] INFO:server_logger: Received ForwardPass response from Worker 2, new input shape torch.Size([64, 10])
+[2024-11-23 21:07:10,221] INFO:server_logger: Computed loss: 2.3970651626586914
+[2024-11-23 21:07:10,221] INFO:server_logger: Computed grad_output shape: torch.Size([64, 10])
+[2024-11-23 21:07:10,222] INFO:server_logger: Sending BackwardPass to Worker 2
+[2024-11-23 21:07:10,225] INFO:server_logger: Received BackwardPass response from Worker 2, new grad_input shape torch.Size([64, 256])
+[2024-11-23 21:07:10,225] INFO:server_logger: Sending BackwardPass to Worker 1
+[2024-11-23 21:07:10,229] INFO:server_logger: Received BackwardPass response from Worker 1, new grad_input shape torch.Size([64, 784])
+[2024-11-23 21:07:10,229] INFO:server_logger: Epoch 1 completed.
+[2024-11-23 21:07:10,229] INFO:server_logger: Training finished.
+[2024-11-23 21:16:17,345] INFO:server_logger: Central Server stopped.
+[2024-11-23 21:16:25,592] INFO:server_logger: Model initialized with two layers.
+[2024-11-23 21:16:25,592] INFO:server_logger: TrainingServiceServicer initialized.
+[2024-11-23 21:16:25,594] INFO:server_logger: Central Server started on port 50051.
+[2024-11-23 21:16:25,594] INFO:server_logger: Flask app started on port 8000.
+[2024-11-23 21:16:29,383] INFO:server_logger: Registered Worker 1: localhost:50052 at localhost:50052, assigned to layer 0
+[2024-11-23 21:16:35,564] INFO:server_logger: Registered Worker 2: localhost:50053 at localhost:50053, assigned to layer 1
+[2024-11-23 21:16:44,470] INFO:server_logger: Training started.
+[2024-11-23 21:16:44,473] INFO:server_logger: Epoch 1 started.
+[2024-11-23 21:16:44,475] INFO:server_logger: Sending ForwardPass to Worker 1
+[2024-11-23 21:16:44,489] INFO:server_logger: Received ForwardPass response from Worker 1, new input shape torch.Size([64, 256])
+[2024-11-23 21:16:44,489] INFO:server_logger: Sending ForwardPass to Worker 2
+[2024-11-23 21:16:44,493] INFO:server_logger: Received ForwardPass response from Worker 2, new input shape torch.Size([64, 10])
+[2024-11-23 21:16:44,494] INFO:server_logger: Computed loss: 2.3486053943634033
+[2024-11-23 21:16:44,494] INFO:server_logger: Computed grad_output shape: torch.Size([64, 10])
+[2024-11-23 21:16:44,494] INFO:server_logger: Sending BackwardPass to Worker 2
+[2024-11-23 21:16:44,497] INFO:server_logger: Received BackwardPass response from Worker 2, new grad_input shape torch.Size([64, 256])
+[2024-11-23 21:16:44,497] INFO:server_logger: Sending BackwardPass to Worker 1
+[2024-11-23 21:16:44,502] INFO:server_logger: Received BackwardPass response from Worker 1, new grad_input shape torch.Size([64, 784])
+[2024-11-23 21:16:44,502] INFO:server_logger: Epoch 1 completed.
+[2024-11-23 21:16:44,503] INFO:server_logger: Training finished.
+[2024-11-23 21:46:12,955] INFO:server_logger: Central Server stopped.

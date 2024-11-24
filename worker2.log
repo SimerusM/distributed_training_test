@@ -1,0 +1,25 @@
+[2024-11-23 21:06:56,152] INFO:worker_logger: Worker server stopped.
+[2024-11-23 21:07:05,039] INFO:worker_logger: Successfully registered with Worker ID 2, assigned to layer 1
+[2024-11-23 21:07:05,042] INFO:worker_logger: Worker assigned to layer 1 initialized.
+[2024-11-23 21:07:05,045] INFO:worker_logger: Worker gRPC server started at localhost:50053
+[2024-11-23 21:07:10,219] INFO:worker_logger: Received ForwardPass with input shape torch.Size([64, 256])
+[2024-11-23 21:07:10,220] INFO:worker_logger: ForwardPass: Processed input through layer 1, output shape torch.Size([64, 10])
+[2024-11-23 21:07:10,220] INFO:worker_logger: Stored input for backward pass: torch.Size([64, 256])
+[2024-11-23 21:07:10,223] INFO:worker_logger: Received BackwardPass with grad_output shape torch.Size([64, 10])
+[2024-11-23 21:07:10,223] INFO:worker_logger: Assigned dL/dW with shape torch.Size([10, 256]) and dL/db with shape torch.Size([10]) to layer 1.
+[2024-11-23 21:07:10,224] INFO:worker_logger: Updated parameters for layer 1.
+[2024-11-23 21:07:10,224] INFO:worker_logger: Computed grad_input for layer 1: torch.Size([64, 256])
+[2024-11-23 21:07:10,224] INFO:worker_logger: Serialized grad_input for layer 1, size: 66283 bytes.
+[2024-11-23 21:16:19,439] INFO:worker_logger: Worker server stopped.
+[2024-11-23 21:16:35,564] INFO:worker_logger: Successfully registered with Worker ID 2, assigned to layer 1
+[2024-11-23 21:16:35,567] INFO:worker_logger: Worker assigned to layer 1 initialized.
+[2024-11-23 21:16:35,571] INFO:worker_logger: Worker gRPC server started at localhost:50053
+[2024-11-23 21:16:44,492] INFO:worker_logger: Received ForwardPass with input shape torch.Size([64, 256])
+[2024-11-23 21:16:44,493] INFO:worker_logger: ForwardPass: Processed input through layer 1, output shape torch.Size([64, 10])
+[2024-11-23 21:16:44,493] INFO:worker_logger: Stored input for backward pass: torch.Size([64, 256])
+[2024-11-23 21:16:44,496] INFO:worker_logger: Received BackwardPass with grad_output shape torch.Size([64, 10])
+[2024-11-23 21:16:44,496] INFO:worker_logger: Assigned dL/dW with shape torch.Size([10, 256]) and dL/db with shape torch.Size([10]) to layer 1.
+[2024-11-23 21:16:44,496] INFO:worker_logger: Updated parameters for layer 1.
+[2024-11-23 21:16:44,497] INFO:worker_logger: Computed grad_input for layer 1: torch.Size([64, 256])
+[2024-11-23 21:16:44,497] INFO:worker_logger: Serialized grad_input for layer 1, size: 66283 bytes.
+[2024-11-23 21:46:11,019] INFO:worker_logger: Worker server stopped.

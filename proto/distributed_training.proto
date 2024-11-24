@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package distributed_training;
+
+// Service definition for the central server
+service TrainingService {
+  // Register a worker node
+  rpc RegisterWorker (RegisterRequest) returns (RegisterResponse);
+  
+  // Send activation/output from one layer to the next
+  rpc ForwardPass (ForwardRequest) returns (ForwardResponse);
+  
+  // Send gradients from one layer to the previous
+  rpc BackwardPass (BackwardRequest) returns (BackwardResponse);
+  
+  // Optional: Heartbeat for health checks
+  rpc Heartbeat (HeartbeatRequest) returns (HeartbeatResponse);
+}
+
+// Messages for registration
+message RegisterRequest {
+  string worker_name = 1;
+  string worker_address = 2; // IP or hostname
+}
+
+message RegisterResponse {
+  bool success = 1;
+  string message = 2;
+  int32 worker_id = 3;
+}
+
+// Messages for forward pass
+message ForwardRequest {
+  int32 worker_id = 1;
+  bytes input = 2; // Serialized tensor
+}
+
+message ForwardResponse {
+  bytes output = 1; // Serialized tensor
+}
+
+// Messages for backward pass
+message BackwardRequest {
+  int32 worker_id = 1;
+  bytes grad_output = 2; // Serialized tensor
+}
+
+message BackwardResponse {
+  bytes grad_input = 1; // Serialized tensor
+}
+
+// Messages for heartbeat
+message HeartbeatRequest {
+  int32 worker_id = 1;
+}
+
+message HeartbeatResponse {
+  bool alive = 1;
+}
